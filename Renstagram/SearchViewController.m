@@ -8,6 +8,7 @@
 
 #import "SearchViewController.h"
 #import "SearchedUserViewController.h"
+#import "Helper.h"
 
 @interface SearchViewController () <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *searchTextField;
@@ -57,9 +58,11 @@
     [self.searchTextField endEditing:YES];
 }
 
--(void)textFieldDidEndEditing:(UITextField *)textField
+-(BOOL)textFieldShouldReturn:(UITextField *)textField
 {
+    //fix this
     if ([textField isEqual:self.searchTextField]) {
+        NSLog(@"in here");
         PFQuery *query = [PFUser query];
         [query whereKey:@"username" containsString:self.searchTextField.text];
         [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
@@ -72,6 +75,7 @@
         }];
         [self.searchTextField resignFirstResponder];
     }
+    return YES;
 }
 
 #pragma mark - table view delegate
@@ -116,11 +120,14 @@
         if (!error) {
             UIImage *image = [UIImage imageWithData:data];
             UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+            imageView.image = [Helper roundedRectImageFromImage:image withRadious:8];
             imageView.frame = CGRectMake(0, 0, self.collectionView.frame.size.width, self.collectionView.frame.size.height/2);
             imageView.contentMode = UIViewContentModeScaleAspectFit;
             [cell.contentView addSubview:imageView];
         }
     }];
+
+
     return cell;
 }
 
