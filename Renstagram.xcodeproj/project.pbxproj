@@ -1,0 +1,597 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4202198519A39CD8005DB287 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4202198419A39CD8005DB287 /* SignUpViewController.m */; };
+		4202198719A3A344005DB287 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4202198619A3A344005DB287 /* Media.xcassets */; };
+		4202198D19A3DD2F005DB287 /* PhotoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4202198C19A3DD2F005DB287 /* PhotoDetailViewController.m */; };
+		4202199019A43DCD005DB287 /* CustomCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4202198F19A43DCD005DB287 /* CustomCollectionViewCell.m */; };
+		4202199319A44754005DB287 /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4202199219A44754005DB287 /* Helper.m */; };
+		425E777919A2B3C700F32BF7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 425E777819A2B3C700F32BF7 /* Foundation.framework */; };
+		425E777B19A2B3C700F32BF7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 425E777A19A2B3C700F32BF7 /* CoreGraphics.framework */; };
+		425E777D19A2B3C700F32BF7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 425E777C19A2B3C700F32BF7 /* UIKit.framework */; };
+		425E778319A2B3C700F32BF7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 425E778119A2B3C700F32BF7 /* InfoPlist.strings */; };
+		425E778519A2B3C700F32BF7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 425E778419A2B3C700F32BF7 /* main.m */; };
+		425E778919A2B3C700F32BF7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 425E778819A2B3C700F32BF7 /* AppDelegate.m */; };
+		425E778C19A2B3C700F32BF7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 425E778A19A2B3C700F32BF7 /* Main.storyboard */; };
+		425E778F19A2B3C700F32BF7 /* MyProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 425E778E19A2B3C700F32BF7 /* MyProfileViewController.m */; };
+		425E779819A2B3C700F32BF7 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 425E779719A2B3C700F32BF7 /* XCTest.framework */; };
+		425E779919A2B3C700F32BF7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 425E777819A2B3C700F32BF7 /* Foundation.framework */; };
+		425E779A19A2B3C700F32BF7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 425E777C19A2B3C700F32BF7 /* UIKit.framework */; };
+		425E77A219A2B3C700F32BF7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 425E77A019A2B3C700F32BF7 /* InfoPlist.strings */; };
+		425E77A419A2B3C700F32BF7 /* RenstagramTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 425E77A319A2B3C700F32BF7 /* RenstagramTests.m */; };
+		425E77AE19A2B43500F32BF7 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 425E77AD19A2B43500F32BF7 /* Parse.framework */; };
+		425E77B019A2B44900F32BF7 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 425E77AF19A2B44900F32BF7 /* AudioToolbox.framework */; };
+		425E77B219A2B45200F32BF7 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 425E77B119A2B45200F32BF7 /* CFNetwork.framework */; };
+		425E77B419A2B46C00F32BF7 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 425E77B319A2B46C00F32BF7 /* CoreLocation.framework */; };
+		425E77B619A2B47B00F32BF7 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 425E77B519A2B47B00F32BF7 /* libz.dylib */; };
+		425E77B819A2B49000F32BF7 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 425E77B719A2B49000F32BF7 /* MobileCoreServices.framework */; };
+		425E77BA19A2B49A00F32BF7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 425E77B919A2B49A00F32BF7 /* QuartzCore.framework */; };
+		425E77BC19A2B4A500F32BF7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 425E77BB19A2B4A500F32BF7 /* Security.framework */; };
+		425E77BE19A2B4AE00F32BF7 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 425E77BD19A2B4AE00F32BF7 /* StoreKit.framework */; };
+		425E77C019A2B4BE00F32BF7 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 425E77BF19A2B4BE00F32BF7 /* SystemConfiguration.framework */; };
+		425E77C219A2B4CB00F32BF7 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 425E77C119A2B4CB00F32BF7 /* AdSupport.framework */; };
+		425E77C419A2B62900F32BF7 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 425E77C319A2B62900F32BF7 /* Social.framework */; };
+		425E77C619A2B64F00F32BF7 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 425E77C519A2B64F00F32BF7 /* Accounts.framework */; };
+		425E77C919A2B8B900F32BF7 /* AddPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 425E77C819A2B8B900F32BF7 /* AddPictureViewController.m */; };
+		8427651819A3C70200DA1AC8 /* SearchedUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8427651719A3C70200DA1AC8 /* SearchedUserViewController.m */; };
+		8427651B19A3E99600DA1AC8 /* TagViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8427651A19A3E99600DA1AC8 /* TagViewController.m */; };
+		84847BE419A2F892009B9C9D /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84847BE319A2F892009B9C9D /* SearchViewController.m */; };
+		84847BE719A3023F009B9C9D /* LogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84847BE619A3023F009B9C9D /* LogInViewController.m */; };
+		84847BE919A3032F009B9C9D /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 84847BE819A3032F009B9C9D /* background.png */; };
+		98D9E6F619A3B5D800528314 /* FriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98D9E6F519A3B5D800528314 /* FriendsViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		425E779B19A2B3C700F32BF7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 425E776D19A2B3C700F32BF7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 425E777419A2B3C700F32BF7;
+			remoteInfo = Renstagram;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4202198319A39CD8005DB287 /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
+		4202198419A39CD8005DB287 /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
+		4202198619A3A344005DB287 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		4202198B19A3DD2F005DB287 /* PhotoDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoDetailViewController.h; sourceTree = "<group>"; };
+		4202198C19A3DD2F005DB287 /* PhotoDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoDetailViewController.m; sourceTree = "<group>"; };
+		4202198E19A43DCD005DB287 /* CustomCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCollectionViewCell.h; sourceTree = "<group>"; };
+		4202198F19A43DCD005DB287 /* CustomCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCollectionViewCell.m; sourceTree = "<group>"; };
+		4202199119A44754005DB287 /* Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Helper.h; sourceTree = "<group>"; };
+		4202199219A44754005DB287 /* Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Helper.m; sourceTree = "<group>"; };
+		425E777519A2B3C700F32BF7 /* Renstagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Renstagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		425E777819A2B3C700F32BF7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		425E777A19A2B3C700F32BF7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		425E777C19A2B3C700F32BF7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		425E778019A2B3C700F32BF7 /* Renstagram-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Renstagram-Info.plist"; sourceTree = "<group>"; };
+		425E778219A2B3C700F32BF7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		425E778419A2B3C700F32BF7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		425E778619A2B3C700F32BF7 /* Renstagram-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Renstagram-Prefix.pch"; sourceTree = "<group>"; };
+		425E778719A2B3C700F32BF7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		425E778819A2B3C700F32BF7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		425E778B19A2B3C700F32BF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		425E778D19A2B3C700F32BF7 /* MyProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyProfileViewController.h; sourceTree = "<group>"; };
+		425E778E19A2B3C700F32BF7 /* MyProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyProfileViewController.m; sourceTree = "<group>"; };
+		425E779619A2B3C700F32BF7 /* RenstagramTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RenstagramTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		425E779719A2B3C700F32BF7 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		425E779F19A2B3C700F32BF7 /* RenstagramTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RenstagramTests-Info.plist"; sourceTree = "<group>"; };
+		425E77A119A2B3C700F32BF7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		425E77A319A2B3C700F32BF7 /* RenstagramTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RenstagramTests.m; sourceTree = "<group>"; };
+		425E77AD19A2B43500F32BF7 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		425E77AF19A2B44900F32BF7 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		425E77B119A2B45200F32BF7 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		425E77B319A2B46C00F32BF7 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		425E77B519A2B47B00F32BF7 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		425E77B719A2B49000F32BF7 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		425E77B919A2B49A00F32BF7 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		425E77BB19A2B4A500F32BF7 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		425E77BD19A2B4AE00F32BF7 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		425E77BF19A2B4BE00F32BF7 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		425E77C119A2B4CB00F32BF7 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		425E77C319A2B62900F32BF7 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		425E77C519A2B64F00F32BF7 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		425E77C719A2B8B900F32BF7 /* AddPictureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddPictureViewController.h; sourceTree = "<group>"; };
+		425E77C819A2B8B900F32BF7 /* AddPictureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddPictureViewController.m; sourceTree = "<group>"; };
+		8427651619A3C70200DA1AC8 /* SearchedUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchedUserViewController.h; sourceTree = "<group>"; };
+		8427651719A3C70200DA1AC8 /* SearchedUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchedUserViewController.m; sourceTree = "<group>"; };
+		8427651919A3E99600DA1AC8 /* TagViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagViewController.h; sourceTree = "<group>"; };
+		8427651A19A3E99600DA1AC8 /* TagViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TagViewController.m; sourceTree = "<group>"; };
+		84847BE219A2F892009B9C9D /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		84847BE319A2F892009B9C9D /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
+		84847BE519A3023F009B9C9D /* LogInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogInViewController.h; sourceTree = "<group>"; };
+		84847BE619A3023F009B9C9D /* LogInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogInViewController.m; sourceTree = "<group>"; };
+		84847BE819A3032F009B9C9D /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
+		98D9E6F419A3B5D800528314 /* FriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsViewController.h; sourceTree = "<group>"; };
+		98D9E6F519A3B5D800528314 /* FriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		425E777219A2B3C700F32BF7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				425E77C619A2B64F00F32BF7 /* Accounts.framework in Frameworks */,
+				425E77C419A2B62900F32BF7 /* Social.framework in Frameworks */,
+				425E77C219A2B4CB00F32BF7 /* AdSupport.framework in Frameworks */,
+				425E77C019A2B4BE00F32BF7 /* SystemConfiguration.framework in Frameworks */,
+				425E77BE19A2B4AE00F32BF7 /* StoreKit.framework in Frameworks */,
+				425E77BC19A2B4A500F32BF7 /* Security.framework in Frameworks */,
+				425E77BA19A2B49A00F32BF7 /* QuartzCore.framework in Frameworks */,
+				425E77B819A2B49000F32BF7 /* MobileCoreServices.framework in Frameworks */,
+				425E77B619A2B47B00F32BF7 /* libz.dylib in Frameworks */,
+				425E77B419A2B46C00F32BF7 /* CoreLocation.framework in Frameworks */,
+				425E777B19A2B3C700F32BF7 /* CoreGraphics.framework in Frameworks */,
+				425E77B219A2B45200F32BF7 /* CFNetwork.framework in Frameworks */,
+				425E77B019A2B44900F32BF7 /* AudioToolbox.framework in Frameworks */,
+				425E777D19A2B3C700F32BF7 /* UIKit.framework in Frameworks */,
+				425E77AE19A2B43500F32BF7 /* Parse.framework in Frameworks */,
+				425E777919A2B3C700F32BF7 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		425E779319A2B3C700F32BF7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				425E779819A2B3C700F32BF7 /* XCTest.framework in Frameworks */,
+				425E779A19A2B3C700F32BF7 /* UIKit.framework in Frameworks */,
+				425E779919A2B3C700F32BF7 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		425E776C19A2B3C700F32BF7 = {
+			isa = PBXGroup;
+			children = (
+				425E777E19A2B3C700F32BF7 /* Renstagram */,
+				425E779D19A2B3C700F32BF7 /* RenstagramTests */,
+				425E777719A2B3C700F32BF7 /* Frameworks */,
+				425E777619A2B3C700F32BF7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		425E777619A2B3C700F32BF7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				425E777519A2B3C700F32BF7 /* Renstagram.app */,
+				425E779619A2B3C700F32BF7 /* RenstagramTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		425E777719A2B3C700F32BF7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				425E77C519A2B64F00F32BF7 /* Accounts.framework */,
+				425E77C319A2B62900F32BF7 /* Social.framework */,
+				425E77C119A2B4CB00F32BF7 /* AdSupport.framework */,
+				425E77BF19A2B4BE00F32BF7 /* SystemConfiguration.framework */,
+				425E77BD19A2B4AE00F32BF7 /* StoreKit.framework */,
+				425E77BB19A2B4A500F32BF7 /* Security.framework */,
+				425E77B919A2B49A00F32BF7 /* QuartzCore.framework */,
+				425E77B719A2B49000F32BF7 /* MobileCoreServices.framework */,
+				425E77B519A2B47B00F32BF7 /* libz.dylib */,
+				425E77B319A2B46C00F32BF7 /* CoreLocation.framework */,
+				425E77B119A2B45200F32BF7 /* CFNetwork.framework */,
+				425E77AF19A2B44900F32BF7 /* AudioToolbox.framework */,
+				425E77AD19A2B43500F32BF7 /* Parse.framework */,
+				425E777819A2B3C700F32BF7 /* Foundation.framework */,
+				425E777A19A2B3C700F32BF7 /* CoreGraphics.framework */,
+				425E777C19A2B3C700F32BF7 /* UIKit.framework */,
+				425E779719A2B3C700F32BF7 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		425E777E19A2B3C700F32BF7 /* Renstagram */ = {
+			isa = PBXGroup;
+			children = (
+				425E778719A2B3C700F32BF7 /* AppDelegate.h */,
+				425E778819A2B3C700F32BF7 /* AppDelegate.m */,
+				425E778A19A2B3C700F32BF7 /* Main.storyboard */,
+				425E77C719A2B8B900F32BF7 /* AddPictureViewController.h */,
+				425E77C819A2B8B900F32BF7 /* AddPictureViewController.m */,
+				8427651919A3E99600DA1AC8 /* TagViewController.h */,
+				8427651A19A3E99600DA1AC8 /* TagViewController.m */,
+				84847BE219A2F892009B9C9D /* SearchViewController.h */,
+				84847BE319A2F892009B9C9D /* SearchViewController.m */,
+				8427651619A3C70200DA1AC8 /* SearchedUserViewController.h */,
+				8427651719A3C70200DA1AC8 /* SearchedUserViewController.m */,
+				425E778D19A2B3C700F32BF7 /* MyProfileViewController.h */,
+				425E778E19A2B3C700F32BF7 /* MyProfileViewController.m */,
+				98D9E6F419A3B5D800528314 /* FriendsViewController.h */,
+				98D9E6F519A3B5D800528314 /* FriendsViewController.m */,
+				84847BE819A3032F009B9C9D /* background.png */,
+				84847BE519A3023F009B9C9D /* LogInViewController.h */,
+				84847BE619A3023F009B9C9D /* LogInViewController.m */,
+				4202198319A39CD8005DB287 /* SignUpViewController.h */,
+				4202198419A39CD8005DB287 /* SignUpViewController.m */,
+				4202198B19A3DD2F005DB287 /* PhotoDetailViewController.h */,
+				4202198C19A3DD2F005DB287 /* PhotoDetailViewController.m */,
+				425E777F19A2B3C700F32BF7 /* Supporting Files */,
+				4202198619A3A344005DB287 /* Media.xcassets */,
+				4202198E19A43DCD005DB287 /* CustomCollectionViewCell.h */,
+				4202198F19A43DCD005DB287 /* CustomCollectionViewCell.m */,
+				4202199119A44754005DB287 /* Helper.h */,
+				4202199219A44754005DB287 /* Helper.m */,
+			);
+			path = Renstagram;
+			sourceTree = "<group>";
+		};
+		425E777F19A2B3C700F32BF7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				425E778019A2B3C700F32BF7 /* Renstagram-Info.plist */,
+				425E778119A2B3C700F32BF7 /* InfoPlist.strings */,
+				425E778419A2B3C700F32BF7 /* main.m */,
+				425E778619A2B3C700F32BF7 /* Renstagram-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		425E779D19A2B3C700F32BF7 /* RenstagramTests */ = {
+			isa = PBXGroup;
+			children = (
+				425E77A319A2B3C700F32BF7 /* RenstagramTests.m */,
+				425E779E19A2B3C700F32BF7 /* Supporting Files */,
+			);
+			path = RenstagramTests;
+			sourceTree = "<group>";
+		};
+		425E779E19A2B3C700F32BF7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				425E779F19A2B3C700F32BF7 /* RenstagramTests-Info.plist */,
+				425E77A019A2B3C700F32BF7 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		425E777419A2B3C700F32BF7 /* Renstagram */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 425E77A719A2B3C700F32BF7 /* Build configuration list for PBXNativeTarget "Renstagram" */;
+			buildPhases = (
+				425E777119A2B3C700F32BF7 /* Sources */,
+				425E777219A2B3C700F32BF7 /* Frameworks */,
+				425E777319A2B3C700F32BF7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Renstagram;
+			productName = Renstagram;
+			productReference = 425E777519A2B3C700F32BF7 /* Renstagram.app */;
+			productType = "com.apple.product-type.application";
+		};
+		425E779519A2B3C700F32BF7 /* RenstagramTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 425E77AA19A2B3C700F32BF7 /* Build configuration list for PBXNativeTarget "RenstagramTests" */;
+			buildPhases = (
+				425E779219A2B3C700F32BF7 /* Sources */,
+				425E779319A2B3C700F32BF7 /* Frameworks */,
+				425E779419A2B3C700F32BF7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				425E779C19A2B3C700F32BF7 /* PBXTargetDependency */,
+			);
+			name = RenstagramTests;
+			productName = RenstagramTests;
+			productReference = 425E779619A2B3C700F32BF7 /* RenstagramTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		425E776D19A2B3C700F32BF7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Rens Gang";
+				TargetAttributes = {
+					425E779519A2B3C700F32BF7 = {
+						TestTargetID = 425E777419A2B3C700F32BF7;
+					};
+				};
+			};
+			buildConfigurationList = 425E777019A2B3C700F32BF7 /* Build configuration list for PBXProject "Renstagram" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 425E776C19A2B3C700F32BF7;
+			productRefGroup = 425E777619A2B3C700F32BF7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				425E777419A2B3C700F32BF7 /* Renstagram */,
+				425E779519A2B3C700F32BF7 /* RenstagramTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		425E777319A2B3C700F32BF7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84847BE919A3032F009B9C9D /* background.png in Resources */,
+				425E778319A2B3C700F32BF7 /* InfoPlist.strings in Resources */,
+				4202198719A3A344005DB287 /* Media.xcassets in Resources */,
+				425E778C19A2B3C700F32BF7 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		425E779419A2B3C700F32BF7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				425E77A219A2B3C700F32BF7 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		425E777119A2B3C700F32BF7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84847BE719A3023F009B9C9D /* LogInViewController.m in Sources */,
+				425E778F19A2B3C700F32BF7 /* MyProfileViewController.m in Sources */,
+				4202198D19A3DD2F005DB287 /* PhotoDetailViewController.m in Sources */,
+				4202199019A43DCD005DB287 /* CustomCollectionViewCell.m in Sources */,
+				425E77C919A2B8B900F32BF7 /* AddPictureViewController.m in Sources */,
+				98D9E6F619A3B5D800528314 /* FriendsViewController.m in Sources */,
+				425E778919A2B3C700F32BF7 /* AppDelegate.m in Sources */,
+				84847BE419A2F892009B9C9D /* SearchViewController.m in Sources */,
+				4202198519A39CD8005DB287 /* SignUpViewController.m in Sources */,
+				8427651B19A3E99600DA1AC8 /* TagViewController.m in Sources */,
+				8427651819A3C70200DA1AC8 /* SearchedUserViewController.m in Sources */,
+				425E778519A2B3C700F32BF7 /* main.m in Sources */,
+				4202199319A44754005DB287 /* Helper.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		425E779219A2B3C700F32BF7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				425E77A419A2B3C700F32BF7 /* RenstagramTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		425E779C19A2B3C700F32BF7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 425E777419A2B3C700F32BF7 /* Renstagram */;
+			targetProxy = 425E779B19A2B3C700F32BF7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		425E778119A2B3C700F32BF7 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				425E778219A2B3C700F32BF7 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		425E778A19A2B3C700F32BF7 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				425E778B19A2B3C700F32BF7 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		425E77A019A2B3C700F32BF7 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				425E77A119A2B3C700F32BF7 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		425E77A519A2B3C700F32BF7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		425E77A619A2B3C700F32BF7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		425E77A819A2B3C700F32BF7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Renstagram/Renstagram-Prefix.pch";
+				INFOPLIST_FILE = "Renstagram/Renstagram-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		425E77A919A2B3C700F32BF7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Renstagram/Renstagram-Prefix.pch";
+				INFOPLIST_FILE = "Renstagram/Renstagram-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		425E77AB19A2B3C700F32BF7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Renstagram.app/Renstagram";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Renstagram/Renstagram-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "RenstagramTests/RenstagramTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		425E77AC19A2B3C700F32BF7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Renstagram.app/Renstagram";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Renstagram/Renstagram-Prefix.pch";
+				INFOPLIST_FILE = "RenstagramTests/RenstagramTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		425E777019A2B3C700F32BF7 /* Build configuration list for PBXProject "Renstagram" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				425E77A519A2B3C700F32BF7 /* Debug */,
+				425E77A619A2B3C700F32BF7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		425E77A719A2B3C700F32BF7 /* Build configuration list for PBXNativeTarget "Renstagram" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				425E77A819A2B3C700F32BF7 /* Debug */,
+				425E77A919A2B3C700F32BF7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		425E77AA19A2B3C700F32BF7 /* Build configuration list for PBXNativeTarget "RenstagramTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				425E77AB19A2B3C700F32BF7 /* Debug */,
+				425E77AC19A2B3C700F32BF7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 425E776D19A2B3C700F32BF7 /* Project object */;
+}
