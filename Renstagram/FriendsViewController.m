@@ -24,17 +24,15 @@
     [super viewDidLoad];
     self.userName = [PFUser currentUser].username;
     self.title = @"Friends";
-    [self getPhotos];
     [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"background"]]];
 
-
+    [self getPhotos];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    // if logged in with another user
     if ((self.photosArray.count == 0) || (self.userName != [PFUser currentUser].username)) {
-        //If added follower after loadView.. :-)
-        NSLog(@"entro!");
         [self getPhotos];
         self.userName = [PFUser currentUser].username;
     }
@@ -42,6 +40,7 @@
 
 - (void)getPhotos
 {
+    // this is bad #badIvan, FetchIfNeeded !
     PFQuery *query = [PFQuery queryWithClassName:@"Follow"];
     [query whereKey:@"from" equalTo:[PFUser currentUser]];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
@@ -56,10 +55,6 @@
             [self createViewsForPhotos];
         }];
     }];
-
-
-
-
 }
 
 - (void)createViewsForPhotos
@@ -67,8 +62,10 @@
     #define PHOTO_VIEW_HEIGHT 250
     #define MARGIN 20
     int count = 0;
-    
+
+    // #badIvan, too much stuff in here
     for (PFObject *photo in self.photosArray) {
+
         UIView *photoView = [[UIView alloc] initWithFrame:CGRectMake(0, count * PHOTO_VIEW_HEIGHT, self.view.frame.size.width, PHOTO_VIEW_HEIGHT)];
         photoView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"cellBg"]];
         [self.scrollView addSubview:photoView];
@@ -78,6 +75,8 @@
         [file getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
             photoImageView.image = [Helper roundedRectImageFromImage:[UIImage imageWithData:data] withRadious:8];
         }];
+
+        // segue when tapped
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(doSegue:)];
         photoImageView.userInteractionEnabled = YES;
         [photoImageView addGestureRecognizer:tap];
@@ -91,9 +90,6 @@
         descriptionLabel.textAlignment = NSTextAlignmentCenter;
         [photoView addSubview:descriptionLabel];
 
-
-
-
         NSDate *photoDate = [photo createdAt];
         NSDateFormatter *dateFormat = [NSDateFormatter new];
         dateFormat.timeStyle = NSDateFormatterShortStyle;
@@ -105,7 +101,7 @@
         whenAuthorLabel.textAlignment = NSTextAlignmentCenter;
         [photoView addSubview:whenAuthorLabel];
 
-
+        // get photo
         PFQuery *userQuery = [PFUser query];
         PFUser *user = [photo objectForKey:@"user"];
         [userQuery whereKey:@"objectId" equalTo:user.objectId];
@@ -113,8 +109,7 @@
             whenAuthorLabel.text =  [NSString stringWithFormat:@"by %@ on %@ ", [object objectForKey:@"username"], [dateFormat stringFromDate:photoDate]];
         }];
 
-
-
+        // get comments
         UILabel *numberCommentsLabel = [[UILabel alloc] initWithFrame:CGRectMake(MARGIN, photoImageView.frame.origin.y + photoImageView.frame.size.height + MARGIN*2.1, self.view.frame.size.width-2*MARGIN, MARGIN*3)];
         numberCommentsLabel.textColor = [UIColor whiteColor];
         numberCommentsLabel.font = [UIFont fontWithName:@"Futura" size:11.0];
@@ -126,14 +121,12 @@
         }];
         [photoView addSubview:numberCommentsLabel];
 
-
-
-        
         count++;
     }
     [self.scrollView setContentSize:CGSizeMake(self.view.frame.size.width, count*PHOTO_VIEW_HEIGHT)];
-
 }
+
+#pragma mark - Segue
 -(void)doSegue:(UITapGestureRecognizer *)gestureRecognizer
 {
     CGFloat y = [gestureRecognizer locationInView:self.scrollView].y;

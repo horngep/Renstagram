@@ -20,7 +20,6 @@
 -(void)viewDidLoad
 {
     [super viewDidLoad];
-
     self.usernameLabel.text = [self.user objectForKey:@"username"];
     [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"background"]]];
 
@@ -37,6 +36,7 @@
     }];
 }
 
+#pragma mark - Following
 - (IBAction)onFollowButtonPressed:(id)sender
 {
     PFObject *follow = [PFObject objectWithClassName:@"Follow"];
@@ -48,7 +48,6 @@
 }
 
 #pragma mark - Collection View delegate
-
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
     return self.photosArray.count;

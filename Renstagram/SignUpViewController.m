@@ -17,19 +17,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    //self.signUpView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.png"]];
     
     UIImageView *logoImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logo.png"]];
     logoImageView.frame = CGRectMake(0, 0, 200, 150);
     logoImageView.contentMode = UIViewContentModeScaleAspectFit;
     [self.signUpView setLogo:logoImageView];
-
-}
-
-- (void)viewWillLayoutSubviews
-{
-
-    
 }
 
 @end
