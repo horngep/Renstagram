@@ -81,7 +81,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     PFUser *user = [self.searchResults objectAtIndex:indexPath.row];
     cell.textLabel.text = [user objectForKey:@"username"];
-    cell.textLabel.textColor = [UIColor greenColor];
+    cell.textLabel.textColor = [UIColor whiteColor];
     return cell;
 }
 

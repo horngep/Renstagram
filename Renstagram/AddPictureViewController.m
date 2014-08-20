@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property UIImage *image;
 @property NSMutableArray *taggedArray;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 @end
 
@@ -92,8 +93,13 @@
 }
 
 
-- (IBAction)choseFilterSegmentedControl:(UISegmentedControl *)sender
+- (IBAction)changedFilterSegmentedControl:(UISegmentedControl *)sender
 {
+    [self.activityIndicator startAnimating];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.8 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self.activityIndicator stopAnimating]; //I know its a fake activity, but since
+        //there is not completion block on core image to stop im faking it :-)
+    });
     CIFilter *filter;
     CIImage *beginImage = [CIImage imageWithData:UIImagePNGRepresentation(self.image)];
 
@@ -125,7 +131,9 @@
         CIImage *outputImage = [filter outputImage];
         UIImage *newImage = [UIImage imageWithCIImage:outputImage];
         self.imageView.image = [Helper roundedRectImageFromImage:newImage withRadious:8];
+
     }
+
 
 }
 

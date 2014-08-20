@@ -15,7 +15,7 @@
     // Override point for customization after application launch.
     [Parse setApplicationId:@"NxsBtWwqECDZrCyYmbPYWNJkjvGyIAcqIqT2on5B"
                   clientKey:@"I5xDL4x3B9Db2cVJhK6okjVIt3ix5niIoctS3UXf"];
-    [[UINavigationBar appearanceWhenContainedIn:[UITabBarController class],nil] setBarTintColor:[UIColor greenColor]];
+    [[UINavigationBar appearanceWhenContainedIn:[UITabBarController class],nil] setBarTintColor:[UIColor blackColor]];
 
     [[UINavigationBar appearance] setTitleTextAttributes:
      [NSDictionary dictionaryWithObjectsAndKeys:

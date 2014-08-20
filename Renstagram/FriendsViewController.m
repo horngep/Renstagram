@@ -12,6 +12,7 @@
 
 @interface FriendsViewController ()
 @property NSArray *photosArray;
+@property NSString *userName;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @end
 
@@ -21,8 +22,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    self.title = [NSString stringWithFormat:@"%@'s friends", [PFUser currentUser].username];
+    self.userName = [PFUser currentUser].username;
+    self.title = @"Friends";
     [self getPhotos];
     [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"background"]]];
 
@@ -31,8 +32,11 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    if (self.photosArray.count == 0) { //If added follower after loadView.. :-)
+    if ((self.photosArray.count == 0) || (self.userName != [PFUser currentUser].username)) {
+        //If added follower after loadView.. :-)
+        NSLog(@"entro!");
         [self getPhotos];
+        self.userName = [PFUser currentUser].username;
     }
 }
 
@@ -81,7 +85,7 @@
         [photoView addSubview:photoImageView];
 
         UILabel *descriptionLabel = [[UILabel alloc] initWithFrame:CGRectMake(MARGIN, photoImageView.frame.origin.y + photoImageView.frame.size.height + MARGIN * 1.4, self.view.frame.size.width-2*MARGIN, MARGIN*3)];
-        descriptionLabel.textColor = [UIColor greenColor];
+        descriptionLabel.textColor = [UIColor whiteColor];
         descriptionLabel.font = [UIFont fontWithName:@"AmericanTypewriter-Bold" size:13.0];
         descriptionLabel.text = [photo objectForKey:@"description"];
         descriptionLabel.textAlignment = NSTextAlignmentCenter;
@@ -96,7 +100,7 @@
         dateFormat.dateStyle = NSDateFormatterShortStyle;
 
         UILabel *whenAuthorLabel = [[UILabel alloc] initWithFrame:CGRectMake(MARGIN, photoImageView.frame.origin.y + photoImageView.frame.size.height + MARGIN * 2.4, self.view.frame.size.width-2*MARGIN, MARGIN*3)];
-        whenAuthorLabel.textColor = [UIColor greenColor];
+        whenAuthorLabel.textColor = [UIColor whiteColor];
         whenAuthorLabel.font = [UIFont fontWithName:@"AmericanTypewriter-Bold" size:11.0];
         whenAuthorLabel.textAlignment = NSTextAlignmentCenter;
         [photoView addSubview:whenAuthorLabel];
@@ -112,7 +116,7 @@
 
 
         UILabel *numberCommentsLabel = [[UILabel alloc] initWithFrame:CGRectMake(MARGIN, photoImageView.frame.origin.y + photoImageView.frame.size.height + MARGIN*3.4, self.view.frame.size.width-2*MARGIN, MARGIN*3)];
-        numberCommentsLabel.textColor = [UIColor greenColor];
+        numberCommentsLabel.textColor = [UIColor whiteColor];
         numberCommentsLabel.font = [UIFont fontWithName:@"AmericanTypewriter-Bold" size:11.0];
         numberCommentsLabel.textAlignment = NSTextAlignmentCenter;
         PFQuery *commentsQuery = [PFQuery queryWithClassName:@"Comment"];

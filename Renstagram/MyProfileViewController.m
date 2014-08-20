@@ -37,7 +37,7 @@
     if (![PFUser currentUser]) { // No user logged in
         [self showLoginView];
     } else {
-        self.title = [NSString stringWithFormat:@"My Profile (%@)", [PFUser currentUser].username];
+        self.title =@"My Profile";
     }
 
 }

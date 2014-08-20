@@ -92,9 +92,13 @@
                                 </segments>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
-                                    <action selector="choseFilterSegmentedControl:" destination="Zq6-b7-VDg" eventType="valueChanged" id="lIj-eO-2No"/>
+                                    <action selector="changedFilterSegmentedControl:" destination="Zq6-b7-VDg" eventType="valueChanged" id="yyH-n9-2H1"/>
                                 </connections>
                             </segmentedControl>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="IMk-Jw-AQH">
+                                <rect key="frame" x="142" y="180" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -104,6 +108,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="0t2-Kj-9Is"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="IMk-Jw-AQH" id="B9t-3w-y8N"/>
                         <outlet property="descriptionTextField" destination="K6j-yN-RZc" id="BL2-Vb-Cx8"/>
                         <outlet property="imageView" destination="Fyt-Ys-oNc" id="S6f-4U-w63"/>
                     </connections>
@@ -348,24 +353,24 @@
                                 <rect key="frame" x="-9" y="75" width="329" height="445"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="JwO-NM-mxa">
-                                    <size key="itemSize" width="186" height="269"/>
+                                    <size key="itemSize" width="186" height="239"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="Als-gF-3hi" customClass="CustomCollectionViewCell">
-                                        <rect key="frame" x="72" y="64" width="186" height="269"/>
+                                        <rect key="frame" x="72" y="64" width="186" height="239"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="186" height="269"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="186" height="239"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oPp-yP-orA">
                                                     <rect key="frame" x="0.0" y="162" width="186" height="22"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xLJ-VL-4CS">
@@ -376,14 +381,14 @@
                                                     <rect key="frame" x="0.0" y="181" width="186" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="13"/>
-                                                    <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zJ5-aH-pok">
                                                     <rect key="frame" x="0.0" y="198" width="186" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="13"/>
-                                                    <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -425,7 +430,7 @@
         <scene sceneID="nnB-Vd-VYs">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="IVI-pI-Glf" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="My Profile" id="jmj-2z-b01"/>
+                    <tabBarItem key="tabBarItem" title="My Profile" image="myprofile" id="jmj-2z-b01"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="MQ2-Aj-L7Q">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -549,11 +554,11 @@
             </objects>
             <point key="canvasLocation" x="1428" y="-328"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Navigation Controller - Search-->
         <scene sceneID="lFg-7G-w4q">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ViP-2z-F5I" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="search" id="RSj-0G-Su5"/>
+                    <tabBarItem key="tabBarItem" title="Search" image="search" id="RSj-0G-Su5"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="QDE-UO-rUi">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -572,7 +577,7 @@
         <scene sceneID="jwe-af-NbE">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="JJQ-RL-ZgA" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Friends" id="3V0-FN-dEQ"/>
+                    <tabBarItem key="tabBarItem" title="Friends" image="friends" id="3V0-FN-dEQ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="8XD-P5-bGi">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -591,7 +596,7 @@
         <scene sceneID="bnQ-Gx-z9g">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Atr-bU-0ra" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Add Photo" id="FHB-UE-Byd"/>
+                    <tabBarItem key="tabBarItem" title="Add Photo" image="addphoto" id="FHB-UE-Byd"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="HBo-dy-n9E">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -608,7 +613,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="addphoto" width="25" height="25"/>
+        <image name="friends" width="25" height="25"/>
+        <image name="myprofile" width="150" height="133"/>
         <image name="placeholder" width="150" height="133"/>
+        <image name="search" width="25" height="25"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
@@ -616,6 +625,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Mvg-5D-TnA"/>
+        <segue reference="YdB-8u-jIt"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -66,8 +66,8 @@
     dateFormat.dateStyle = NSDateFormatterShortStyle;
     //[dateFormat setDateFormat:@"EEE, MMM d, h:mm a"];
     cell.detailTextLabel.text = [NSString stringWithFormat:@"Lasted Updated: %@", [dateFormat stringFromDate:updated]];
-    cell.detailTextLabel.textColor = [UIColor greenColor];
-    cell.textLabel.textColor = [UIColor greenColor];
+    cell.detailTextLabel.textColor = [UIColor whiteColor];
+    cell.textLabel.textColor = [UIColor whiteColor];
 
     [userQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         PFUser *user = objects.firstObject;
