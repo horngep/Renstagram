@@ -73,7 +73,7 @@
         photoView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"cellBg"]];
         [self.scrollView addSubview:photoView];
 
-        UIImageView *photoImageView = [[UIImageView alloc] initWithFrame:CGRectMake(MARGIN, MARGIN*1.5, self.view.frame.size.width-MARGIN*2, 100)];
+        UIImageView *photoImageView = [[UIImageView alloc] initWithFrame:CGRectMake(MARGIN, MARGIN*1.3, self.view.frame.size.width-MARGIN*2, 120)];
         PFFile *file = [photo objectForKey:@"photo"];
         [file getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
             photoImageView.image = [Helper roundedRectImageFromImage:[UIImage imageWithData:data] withRadious:8];
@@ -84,9 +84,9 @@
         photoImageView.contentMode = UIViewContentModeScaleAspectFit;
         [photoView addSubview:photoImageView];
 
-        UILabel *descriptionLabel = [[UILabel alloc] initWithFrame:CGRectMake(MARGIN, photoImageView.frame.origin.y + photoImageView.frame.size.height + MARGIN * 1.4, self.view.frame.size.width-2*MARGIN, MARGIN*3)];
+        UILabel *descriptionLabel = [[UILabel alloc] initWithFrame:CGRectMake(MARGIN, photoImageView.frame.origin.y + photoImageView.frame.size.height + MARGIN/2, self.view.frame.size.width-2*MARGIN, MARGIN*3)];
         descriptionLabel.textColor = [UIColor whiteColor];
-        descriptionLabel.font = [UIFont fontWithName:@"AmericanTypewriter-Bold" size:13.0];
+        descriptionLabel.font = [UIFont fontWithName:@"Futura" size:13.0];
         descriptionLabel.text = [photo objectForKey:@"description"];
         descriptionLabel.textAlignment = NSTextAlignmentCenter;
         [photoView addSubview:descriptionLabel];
@@ -99,9 +99,9 @@
         dateFormat.timeStyle = NSDateFormatterShortStyle;
         dateFormat.dateStyle = NSDateFormatterShortStyle;
 
-        UILabel *whenAuthorLabel = [[UILabel alloc] initWithFrame:CGRectMake(MARGIN, photoImageView.frame.origin.y + photoImageView.frame.size.height + MARGIN * 2.4, self.view.frame.size.width-2*MARGIN, MARGIN*3)];
+        UILabel *whenAuthorLabel = [[UILabel alloc] initWithFrame:CGRectMake(MARGIN, photoImageView.frame.origin.y + photoImageView.frame.size.height + MARGIN * 1.3, self.view.frame.size.width-2*MARGIN, MARGIN*3)];
         whenAuthorLabel.textColor = [UIColor whiteColor];
-        whenAuthorLabel.font = [UIFont fontWithName:@"AmericanTypewriter-Bold" size:11.0];
+        whenAuthorLabel.font = [UIFont fontWithName:@"Futura" size:11.0];
         whenAuthorLabel.textAlignment = NSTextAlignmentCenter;
         [photoView addSubview:whenAuthorLabel];
 
@@ -110,14 +110,14 @@
         PFUser *user = [photo objectForKey:@"user"];
         [userQuery whereKey:@"objectId" equalTo:user.objectId];
         [userQuery getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
-            whenAuthorLabel.text =  [NSString stringWithFormat:@"on %@  @%@", [dateFormat stringFromDate:photoDate], [object objectForKey:@"username"]];
+            whenAuthorLabel.text =  [NSString stringWithFormat:@"by %@ on %@ ", [object objectForKey:@"username"], [dateFormat stringFromDate:photoDate]];
         }];
 
 
 
-        UILabel *numberCommentsLabel = [[UILabel alloc] initWithFrame:CGRectMake(MARGIN, photoImageView.frame.origin.y + photoImageView.frame.size.height + MARGIN*3.4, self.view.frame.size.width-2*MARGIN, MARGIN*3)];
+        UILabel *numberCommentsLabel = [[UILabel alloc] initWithFrame:CGRectMake(MARGIN, photoImageView.frame.origin.y + photoImageView.frame.size.height + MARGIN*2.1, self.view.frame.size.width-2*MARGIN, MARGIN*3)];
         numberCommentsLabel.textColor = [UIColor whiteColor];
-        numberCommentsLabel.font = [UIFont fontWithName:@"AmericanTypewriter-Bold" size:11.0];
+        numberCommentsLabel.font = [UIFont fontWithName:@"Futura" size:11.0];
         numberCommentsLabel.textAlignment = NSTextAlignmentCenter;
         PFQuery *commentsQuery = [PFQuery queryWithClassName:@"Comment"];
         [commentsQuery whereKey:@"photo" equalTo:photo];
