@@ -6,7 +6,9 @@
 //  Copyright (c) 2014 Rens Gang. All rights reserved.
 //
 
+#import "Helper.h"
 #import "SearchedUserViewController.h"
+
 
 @interface SearchedUserViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
@@ -62,7 +64,7 @@
     [file getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
         if (!error) {
             UIImage *image = [UIImage imageWithData:data];
-            UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+            UIImageView *imageView = [[UIImageView alloc] initWithImage:[Helper roundedRectImageFromImage:image withRadious:8]];
             imageView.frame = CGRectMake(0, 0, self.collectionView.frame.size.width, self.collectionView.frame.size.height/2);
             imageView.contentMode = UIViewContentModeScaleAspectFit;
             [cell.contentView addSubview:imageView];

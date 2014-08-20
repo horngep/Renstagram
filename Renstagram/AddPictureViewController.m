@@ -37,6 +37,9 @@
 -(void)showPicker
 {
     UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    picker.navigationBar.backgroundColor = [UIColor blackColor];
+    picker.navigationBar.barTintColor = [UIColor blackColor];
+    picker.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background"]];
     picker.delegate = self;
     picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
     picker.allowsEditing = YES;
