@@ -17,7 +17,6 @@
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property NSArray *photosArray; //Of PFObject
-
 @end
 
 @implementation MyProfileViewController
@@ -52,7 +51,12 @@
 - (void)displayUserPhotos
 {
     PFQuery *query = [PFQuery queryWithClassName:@"Photo"];
-    [query whereKey:@"user" equalTo:[PFUser currentUser]];
+    if (!self.user) {
+        [query whereKey:@"user" equalTo:[PFUser currentUser]];
+    } else {
+        [query whereKey:@"user" equalTo:self.user];
+        self.title = [NSString stringWithFormat:@"%@'s Profile",self.user.username];
+    }
     [query orderByDescending:@"createdAt"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         self.photosArray = objects;
@@ -103,6 +107,7 @@
 {
     [self dismissViewControllerAnimated:YES completion:nil];
     [self displayUserPhotos];
+    self.user = [PFUser currentUser];
 }
 
 #pragma mark - Collection View delegate
