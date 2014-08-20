@@ -8,7 +8,7 @@
 
 #import "SearchViewController.h"
 #import "SearchedUserViewController.h"
-#import "Helper.h"
+#import "PhotoDetailViewController.h"
 
 @interface SearchViewController () <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *searchTextField;
@@ -34,9 +34,15 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    SearchedUserViewController *suvc = segue.destinationViewController;
-    suvc.user = [self.searchResults objectAtIndex:[self.tableView indexPathForSelectedRow].row];
-    NSLog(@"%@",suvc.user);
+    if ([segue.identifier isEqualToString:@"searchSegue"]) {
+        SearchedUserViewController *suvc = segue.destinationViewController;
+        suvc.user = [self.searchResults objectAtIndex:[self.tableView indexPathForSelectedRow].row];
+        NSLog(@"%@",suvc.user);
+    } else {
+        PhotoDetailViewController *pdvc = segue.destinationViewController;
+        NSIndexPath *indexPath = [self.collectionView indexPathsForSelectedItems].firstObject;
+        pdvc.photo = [self.photosArray objectAtIndex:indexPath.row];
+    }
 }
 
 #pragma mark - TABLE VIEW
@@ -94,7 +100,6 @@
     return self.searchResults.count;
 }
 
-
 #pragma mark - COLLECTION VIEW
 -(void)showPhotoOnCollectionView
 {
@@ -120,8 +125,8 @@
         if (!error) {
             UIImage *image = [UIImage imageWithData:data];
             UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
-            imageView.image = [Helper roundedRectImageFromImage:image withRadious:8];
-            imageView.frame = CGRectMake(0, 0, self.collectionView.frame.size.width, self.collectionView.frame.size.height/2);
+            imageView.frame = CGRectMake(0, 0, 155, 155); //this is the size of cell
+            imageView.backgroundColor = [UIColor blackColor];
             imageView.contentMode = UIViewContentModeScaleAspectFit;
             [cell.contentView addSubview:imageView];
         }

@@ -207,7 +207,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
-                                            <segue destination="QKR-9h-Xei" kind="push" identifier="cellIDDD" id="Llx-2R-1lv"/>
+                                            <segue destination="QKR-9h-Xei" kind="push" identifier="searchSegue" id="Llx-2R-1lv"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -220,20 +220,23 @@
                                 <rect key="frame" x="0.0" y="103" width="320" height="416"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="k6B-ni-L2n">
-                                    <size key="itemSize" width="148" height="148"/>
+                                    <size key="itemSize" width="155" height="155"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="o5x-gw-lMS">
-                                        <rect key="frame" x="0.0" y="0.0" width="148" height="148"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="155" height="155"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="148" height="148"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="155" height="155"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <connections>
+                                            <segue destination="SnO-lK-CgD" kind="push" id="Nrk-qm-pE3"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
@@ -335,7 +338,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="veA-vr-nV3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="674" y="345"/>
+            <point key="canvasLocation" x="1240" y="333"/>
         </scene>
         <!--My Profile View Controller-->
         <scene sceneID="ufC-wZ-h7g">
@@ -552,7 +555,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h7i-7C-e7t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1428" y="-328"/>
+            <point key="canvasLocation" x="1240" y="-328"/>
         </scene>
         <!--Navigation Controller - Search-->
         <scene sceneID="lFg-7G-w4q">
@@ -615,7 +618,7 @@
     <resources>
         <image name="addphoto" width="25" height="25"/>
         <image name="friends" width="25" height="25"/>
-        <image name="myprofile" width="150" height="133"/>
+        <image name="myprofile" width="25" height="25"/>
         <image name="placeholder" width="150" height="133"/>
         <image name="search" width="25" height="25"/>
     </resources>
@@ -625,6 +628,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="YdB-8u-jIt"/>
+        <segue reference="Mvg-5D-TnA"/>
     </inferredMetricsTieBreakers>
 </document>
