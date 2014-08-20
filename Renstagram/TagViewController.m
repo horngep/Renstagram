@@ -21,9 +21,9 @@
     [super viewDidLoad];
     self.followersArray = [NSArray new];
 
+    //can only tag followers
     PFQuery *query = [PFQuery queryWithClassName:@"Follow"];
     [query whereKey:@"from" equalTo:[PFUser currentUser]];
-    //get all the follower that is following current user
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (error) {
             NSLog(@"error : %@",error);
@@ -37,11 +37,11 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    //send back the person who got tagged
     self.selectedObject = [self.followersArray objectAtIndex:[self.tableView indexPathForSelectedRow].row];
 }
 
 #pragma mark - table view delegate
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];

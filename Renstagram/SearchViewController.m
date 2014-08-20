@@ -26,10 +26,12 @@
 {
     [super viewDidLoad];
     self.title = @"Search";
-        self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background"]];
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background"]];
     self.searchResults = [NSArray new];
+
     [self.tableView setHidden:YES];
     [self.cancelButton setHidden:YES];
+
     [self showPhotoOnCollectionView];
 }
 
@@ -46,19 +48,21 @@
     }
 }
 
+#pragma mark -
 #pragma mark - TABLE VIEW
-
 -(void)textFieldDidBeginEditing:(UITextField *)textField
 {
     if ( [textField isEqual:self.searchTextField] ) {
+        // hide collection, show table
         [self.tableView setHidden:NO];
         [self.cancelButton setHidden:NO];
         [self.collectionView setHidden:YES];
     }
 }
 
-- (IBAction)onCancelButtonPressed:(id)sender
+-(IBAction)onCancelButtonPressed:(id)sender
 {
+    // hide table, show collection
     [self.cancelButton setHidden:YES];
     [self.tableView setHidden:YES];
     [self.collectionView setHidden:NO];
@@ -67,9 +71,8 @@
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-    //fix this
     if ([textField isEqual:self.searchTextField]) {
-        NSLog(@"in here");
+        // search for user to follow
         PFQuery *query = [PFUser query];
         [query whereKey:@"username" containsString:self.searchTextField.text];
         [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
@@ -86,7 +89,6 @@
 }
 
 #pragma mark - table view delegate
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
@@ -101,9 +103,11 @@
     return self.searchResults.count;
 }
 
+#pragma mark -
 #pragma mark - COLLECTION VIEW
 -(void)showPhotoOnCollectionView
 {
+    // show all photos: "Explore"
     PFQuery *query = [PFQuery queryWithClassName:@"Photo"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         self.photosArray = objects;
@@ -135,8 +139,6 @@
             [cell.contentView addSubview:imageView];
         }
     }];
-
-
     return cell;
 }
 

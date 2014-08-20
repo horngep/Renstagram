@@ -26,18 +26,25 @@
 {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background"]];
-    if ([PFUser currentUser]) {
+    self.title =@"My Profile";
+
+    if ([PFUser currentUser]) { // if logged in
         [self displayUserPhotos];
     }
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    NSLog(@"entro");
+
     [super viewWillAppear:animated];
-    if (![PFUser currentUser]) { // No user logged in
+    if (![PFUser currentUser]) { // if not logged in
         [self showLoginView];
     } else {
-        self.title =@"My Profile";
+        // reload when upload
+        NSLog(@"entro");
+        [self displayUserPhotos];
+
     }
 
 }
@@ -55,6 +62,7 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    // send photo to detail view controller
     if ([segue.identifier isEqualToString:@"detail"]) {
         PhotoDetailViewController *pdvc = segue.destinationViewController;
         NSIndexPath *indexPath = [self.collectionView indexPathsForSelectedItems].firstObject;
@@ -66,7 +74,7 @@
 
 -(void)showLoginView
 {
-    //custom login view controller
+    //custom login and sign up view controller
     LogInViewController *logInViewController = [[LogInViewController alloc] init];
     logInViewController.fields = PFLogInFieldsUsernameAndPassword | PFLogInFieldsLogInButton | PFLogInFieldsFacebook | PFLogInFieldsTwitter | PFLogInFieldsSignUpButton |PFLogInFieldsPasswordForgotten;
     logInViewController.delegate = self;
@@ -76,7 +84,6 @@
     [signUpViewController setDelegate:self];
 
     [logInViewController setSignUpController:signUpViewController];
-
     [self presentViewController:logInViewController animated:YES completion:NULL];
 }
 
@@ -106,12 +113,12 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
+    // use custom collection view cell
     CustomCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
     PFObject *photo = [self.photosArray objectAtIndex:indexPath.row];
     PFFile *file = [photo objectForKey:@"photo"];
     [file getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
         if (!error) {
-            //[cell.contentView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
             UIImage *image = [UIImage imageWithData:data];
 
             cell.imageView.image = [Helper roundedRectImageFromImage:image withRadious:9];
@@ -124,12 +131,14 @@
             dateFormat.dateStyle = NSDateFormatterShortStyle;
             cell.infoLabel.text = [NSString stringWithFormat:@"on %@", [dateFormat stringFromDate:photoDate]];
 
+            // get comments associated with the photo
             PFQuery *query = [PFQuery queryWithClassName:@"Comment"];
             [query whereKey:@"photo" equalTo:photo];
             [query countObjectsInBackgroundWithBlock:^(int number, NSError *error) {
                 cell.commentsLabel.text = [NSString stringWithFormat:@"%d comments", number];
             }];
-            
+        } else {
+            NSLog(@"error : %@",error);
         }
     }];
     return cell;
