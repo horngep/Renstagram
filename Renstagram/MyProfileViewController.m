@@ -17,6 +17,7 @@
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property NSArray *photosArray; //Of PFObject
+@property NSString *followIdString;
 @end
 
 @implementation MyProfileViewController
@@ -41,7 +42,62 @@
     } else {
         // reload when upload
         [self displayUserPhotos];
+    }
+#define BUTTON_WIDTH 90
+#define BUTTON_HEIGHT 30
+#define MARGIN 20
+    if (!(self.user == [PFUser currentUser]) && self.user) {
+        UIButton *followButton = [UIButton new];
+        followButton.frame = CGRectMake(self.view.frame.size.width-BUTTON_WIDTH-MARGIN*2, MARGIN*3, BUTTON_WIDTH, BUTTON_HEIGHT+ MARGIN);
+        [followButton addTarget:self action:@selector(follow:) forControlEvents:UIControlEventTouchUpInside];
+        followButton.titleLabel.textColor = [UIColor whiteColor];
+        [followButton setTitle:@"Follow" forState:UIControlStateNormal];
+        PFQuery *query = [PFQuery queryWithClassName:@"Follow"];
+        [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+            for (PFObject *object in objects) {
+                NSLog(@"entro!");
+                PFUser *userFrom = [object objectForKey:@"from"];
+                PFUser *userTo = [object objectForKey:@"to"];
 
+                if ([userFrom.objectId isEqualToString:[PFUser currentUser].objectId] && [userTo.objectId isEqualToString:self.user.objectId] ) {
+                    self.followIdString = object.objectId;
+                [followButton setTitle:@"Unfollow" forState:UIControlStateNormal];
+                }
+            }
+        }];
+        NSLog(@"heee");
+
+        [self.view addSubview:followButton];
+        [self.view bringSubviewToFront:followButton];
+    }
+
+}
+
+-(void)follow:(UIButton *)button
+{
+
+    if ([button.titleLabel.text isEqualToString:@"Follow"]) {
+        NSLog(@"PREEESD 1");
+        PFObject *follow = [PFObject objectWithClassName:@"Follow"];
+        [follow setObject:[PFUser currentUser] forKey:@"from"];
+        [follow setObject:self.user forKey:@"to"];
+        [follow saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            NSLog(@"saved!");
+            self.followIdString = follow.objectId;
+        }];
+        [button setTitle:@"Unfollow" forState:UIControlStateNormal];
+
+    } else
+
+    if ([button.titleLabel.text isEqualToString:@"Unfollow"]) {
+        NSLog(@"PREEESD 2");
+        PFQuery *query = [PFQuery queryWithClassName:@"Follow"];
+        [query whereKey:@"objectId" equalTo:self.followIdString];
+        [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+            PFObject *object = objects.firstObject;
+            [object delete];
+        }];
+        [button setTitle:@"Follow" forState:UIControlStateNormal];
     }
 
 }
