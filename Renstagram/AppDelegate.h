@@ -8,7 +8,7 @@
 
 
 #import <UIKit/UIKit.h>
-
+//Hello im ivan :-D you are a MF
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
