@@ -14,6 +14,8 @@
 @property IBOutlet UITableView *tableView;
 @property IBOutlet UITextField *textField;
 @property IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UILabel *taggedLabel;
+@property (weak, nonatomic) IBOutlet UIButton *deleteButton;
 @property NSArray *commentsArray;
 
 @end
@@ -27,24 +29,55 @@
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background"]];
     self.tableView.backgroundColor = [UIColor clearColor];
 
-    // (FetchIfNeeded ?)
     // whos photo
     PFQuery *userQuery = [PFUser query];
     PFUser *user = [self.photo objectForKey:@"user"];
     [userQuery whereKey:@"objectId" equalTo:user.objectId];
     [userQuery getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
         self.title = [NSString stringWithFormat:@"Photo by %@", [object objectForKey:@"username"]];
+
     }];
 
-    // display photo
+    //if its current user
+    [user fetchIfNeeded];
+    NSString *name = [user objectForKey:@"username"];
+    if (![name isEqual:[[PFUser currentUser] objectForKey:@"username"]]) { //if the photo doenst belong to current user
+        [self.deleteButton setHidden:YES];
+    }
+
+    // display photo, comments, tags
     PFFile *file = [self.photo objectForKey:@"photo"];
     [file getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
         UIImage *image = [UIImage imageWithData:data];
         self.imageView.image = [Helper roundedRectImageFromImage:image withRadious:8];
     }];
+    [self loadComments];
+    [self displayTaggedFollowers];
 
-    [self loadComments]; // get commnents of THE photo
+}
+#pragma mark - deleting photo
+- (IBAction)onDeletePhotoButtonPressed:(id)sender
+{
+    [self.photo delete];
+    NSLog(@"deleted");
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
+#pragma mark - tagged
+-(void)displayTaggedFollowers
+{
+    NSMutableString *tagString = [NSMutableString new];
+    PFQuery *query = [PFQuery queryWithClassName:@"Tag"];
+    [query whereKey:@"photoContainTag" equalTo:self.photo];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        // now we have array of Tags~
+        for (PFObject *tags in objects) {
+            PFUser *user = [tags objectForKey:@"userGotTag"];
+            [user fetchIfNeeded];
+            [tagString appendString:[NSString stringWithFormat:@"%@  ",[user objectForKey:@"username"]]];
+        }
+        self.taggedLabel.text = tagString;
+    }];
 }
 
 #pragma mark - Comments
