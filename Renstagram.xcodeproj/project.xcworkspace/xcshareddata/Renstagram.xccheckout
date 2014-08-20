@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>62686CAE-4D42-4A44-A2F2-020E82B00AF3</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Renstagram</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>66384B4F-A135-482A-AD27-5439EED9F48F</key>
+		<string>https://github.com/ivangodfather/Renstragram</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Renstagram.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>66384B4F-A135-482A-AD27-5439EED9F48F</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/ivangodfather/Renstragram</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>66384B4F-A135-482A-AD27-5439EED9F48F</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>66384B4F-A135-482A-AD27-5439EED9F48F</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Renstragram</string>
+		</dict>
+	</array>
+</dict>
+</plist>
