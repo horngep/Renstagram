@@ -8,11 +8,13 @@
 
 #import "AddPictureViewController.h"
 #import "TagViewController.h"
+#import "Helper.h"
 
 @interface AddPictureViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *descriptionTextField;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property UIImage *image;
 @property NSMutableArray *taggedArray;
 
 @end
@@ -23,7 +25,8 @@
 {
     [super viewDidLoad];
     self.taggedArray = [NSMutableArray new];
-        self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background"]];
+    self.title = @"Add a photo";
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background"]];
     [self showPicker];
 }
 - (IBAction)imagePick:(UITapGestureRecognizer *)sender {
@@ -89,6 +92,42 @@
 }
 
 
+- (IBAction)choseFilterSegmentedControl:(UISegmentedControl *)sender
+{
+    CIFilter *filter;
+    CIImage *beginImage = [CIImage imageWithData:UIImagePNGRepresentation(self.image)];
+
+    switch (sender.selectedSegmentIndex) {
+        case 0:
+            NSLog(@"no filter!");
+            self.imageView.image  = [Helper roundedRectImageFromImage:self.image withRadious:8];
+            break;
+        case 1:
+        {
+
+            filter = [CIFilter filterWithName:@"CISepiaTone"
+                                          keysAndValues: kCIInputImageKey, beginImage,
+                                @"inputIntensity", @0.8, nil];
+            break;
+        }
+            case 2:
+        {
+            filter = [CIFilter filterWithName:@"CIPhotoEffectInstant"
+                                keysAndValues: kCIInputImageKey, beginImage,
+                       nil];
+        }
+            break;
+
+        default:
+            break;
+    }
+    if (sender.selectedSegmentIndex) {
+        CIImage *outputImage = [filter outputImage];
+        UIImage *newImage = [UIImage imageWithCIImage:outputImage];
+        self.imageView.image = [Helper roundedRectImageFromImage:newImage withRadious:8];
+    }
+
+}
 
 
 #pragma mark UIImagePickerControllerDelegate
@@ -96,7 +135,8 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     UIImage *image = [info objectForKey:@"UIImagePickerControllerEditedImage"];
-    self.imageView.image = image;
+    self.imageView.image = [Helper roundedRectImageFromImage:image withRadious:8];
+    self.image = image;
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
