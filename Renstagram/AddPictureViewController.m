@@ -94,7 +94,7 @@
     PFObject *follower = tvc.selectedObject;
     //get PFUser from follow
     PFUser *user = [follower objectForKey:@"to"];
-    [user fetchIfNeeded]; // need this to get to user
+    [user fetchIfNeeded]; // need this to get to user?
     [self.taggedArray addObject:user];
     //now we have array of PFUsers who was tagged
     [self displayTaggedFollowers];

@@ -513,15 +513,15 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="yPz-e3-M7G">
-                                <rect key="frame" x="39" y="290" width="241" height="227"/>
+                                <rect key="frame" x="0.0" y="327" width="320" height="190"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="Gwy-m8-7dA" detailTextLabel="SSq-Sb-OhQ" style="IBUITableViewCellStyleSubtitle" id="AZU-pE-Esb">
-                                        <rect key="frame" x="0.0" y="22" width="241" height="44"/>
+                                        <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AZU-pE-Esb" id="FaR-Jl-A3N">
-                                            <rect key="frame" x="0.0" y="0.0" width="241" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Gwy-m8-7dA">
@@ -563,13 +563,34 @@
                                     <action selector="onButtonPressedAddComment:" destination="SnO-lK-CgD" eventType="touchUpInside" id="dMn-gA-ZRm"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="tagged friends" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BLP-WJ-VKg">
+                                <rect key="frame" x="39" y="290" width="240" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.82615194515306123" green="0.82615194515306123" blue="0.82615194515306123" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lfd-E1-Cj8">
+                                <rect key="frame" x="275" y="288" width="31" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.058833211050000001" blue="0.092919697649999994" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title=" " image="trash-50">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onDeletePhotoButtonPressed:" destination="SnO-lK-CgD" eventType="touchUpInside" id="YyK-Nl-A3y"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="B5k-8r-YoV"/>
                     <connections>
+                        <outlet property="deleteButton" destination="Lfd-E1-Cj8" id="MxQ-cx-YfY"/>
                         <outlet property="imageView" destination="ShU-LN-a8x" id="Ccv-Aa-O2p"/>
                         <outlet property="tableView" destination="yPz-e3-M7G" id="B4f-0h-qBi"/>
+                        <outlet property="taggedLabel" destination="BLP-WJ-VKg" id="EWJ-Sx-6km"/>
                         <outlet property="textField" destination="cwM-bs-s3y" id="8Nx-H8-AL2"/>
                     </connections>
                 </viewController>
@@ -634,6 +655,23 @@
             </objects>
             <point key="canvasLocation" x="-142" y="-328"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="nUr-Jv-P6D">
+            <objects>
+                <viewController id="kGm-Fl-vqc" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gHR-W1-SwG"/>
+                        <viewControllerLayoutGuide type="bottom" id="iA6-4M-4SY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Nry-M0-P7z">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3ot-f2-WrT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
     </scenes>
     <resources>
         <image name="addphoto" width="25" height="25"/>
@@ -641,6 +679,7 @@
         <image name="myprofile" width="25" height="25"/>
         <image name="placeholder" width="150" height="133"/>
         <image name="search" width="25" height="25"/>
+        <image name="trash-50" width="25" height="25"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
