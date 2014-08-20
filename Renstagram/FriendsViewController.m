@@ -32,10 +32,14 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     // if logged in with another user
-    if ((self.photosArray.count == 0) || (self.userName != [PFUser currentUser].username)) {
-        [self getPhotos];
-        self.userName = [PFUser currentUser].username;
+//    if ((self.photosArray.count == 0) || (self.userName != [PFUser currentUser].username)) {
+//        [self getPhotos];
+//        self.userName = [PFUser currentUser].username;
+//    }
+    for (UIView *view in self.scrollView.subviews) {
+        [view removeFromSuperview];
     }
+    [self getPhotos];
 }
 
 - (void)getPhotos

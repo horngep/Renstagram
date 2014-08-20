@@ -431,6 +431,16 @@
                                     <outlet property="delegate" destination="vXZ-lx-hvc" id="IKc-1M-4NX"/>
                                 </connections>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cSJ-6H-rcu">
+                                <rect key="frame" x="20" y="75" width="92" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Follow">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="followAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Hn8-4c-jXm"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -443,6 +453,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="2Jl-dS-yYW" id="7ag-JH-2Tk"/>
+                        <outlet property="followButton" destination="cSJ-6H-rcu" id="xaT-kz-qUn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -687,7 +698,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Nrk-qm-pE3"/>
         <segue reference="nQs-wu-i2X"/>
+        <segue reference="YdB-8u-jIt"/>
     </inferredMetricsTieBreakers>
 </document>
