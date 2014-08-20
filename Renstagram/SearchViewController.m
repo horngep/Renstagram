@@ -7,8 +7,8 @@
 //
 
 #import "SearchViewController.h"
-#import "SearchedUserViewController.h"
 #import "PhotoDetailViewController.h"
+#import "MyProfileViewController.h"
 #import "Helper.h"
 
 @interface SearchViewController () <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
@@ -38,9 +38,8 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"searchSegue"]) {
-        SearchedUserViewController *suvc = segue.destinationViewController;
+        MyProfileViewController *suvc = segue.destinationViewController;
         suvc.user = [self.searchResults objectAtIndex:[self.tableView indexPathForSelectedRow].row];
-        NSLog(@"%@",suvc.user);
     } else {
         PhotoDetailViewController *pdvc = segue.destinationViewController;
         NSIndexPath *indexPath = [self.collectionView indexPathsForSelectedItems].firstObject;

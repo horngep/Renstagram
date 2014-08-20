@@ -63,14 +63,12 @@
         [photo setObject:self.descriptionTextField.text forKey:@"description"];
         [photo setObject:[PFUser currentUser] forKey:@"user"];
         [photo saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-            NSLog(@"picture saved!");
             // save tag to associate with photo for PFObject class name "Tag" (from unwind)
             for (PFUser *user in self.taggedArray ) {
                 PFObject *tag = [PFObject objectWithClassName:@"Tag"];
                 [tag setObject:user forKey:@"userGotTag"];
                 [tag setObject:photo forKey:@"photoContainTag"];
                 [tag saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-                    NSLog(@"tag saved");
                 }];
             }
         }];
@@ -99,7 +97,6 @@
     [user fetchIfNeeded]; // need this to get to user
     [self.taggedArray addObject:user];
     //now we have array of PFUsers who was tagged
-    NSLog(@"%@",self.taggedArray);
     [self displayTaggedFollowers];
 }
 

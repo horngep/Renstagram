@@ -70,7 +70,6 @@
     PFQuery *query = [PFQuery queryWithClassName:@"Comment"];
     [query whereKey:@"photo" equalTo:self.photo];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        NSLog(@"eee %@", objects);
         self.commentsArray = objects;
         [self.tableView reloadData];
     }];
@@ -81,7 +80,6 @@
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     cell.backgroundColor = [UIColor clearColor];
-    NSLog(@"comment %@", [self.commentsArray objectAtIndex:indexPath.row]);
     PFObject *comment = [self.commentsArray objectAtIndex:indexPath.row];
     cell.textLabel.text = [comment objectForKey:@"comment"];
 

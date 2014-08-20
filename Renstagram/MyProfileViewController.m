@@ -34,14 +34,12 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    NSLog(@"entro");
 
     [super viewWillAppear:animated];
     if (![PFUser currentUser]) { // if not logged in
         [self showLoginView];
     } else {
         // reload when upload
-        NSLog(@"entro");
         [self displayUserPhotos];
 
     }

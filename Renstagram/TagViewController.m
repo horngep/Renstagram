@@ -29,7 +29,6 @@
             NSLog(@"error : %@",error);
         } else {
             self.followersArray = objects;
-            NSLog(@"%d", (int)self.followersArray.count);
             [self.tableView reloadData];
         }
     }];
