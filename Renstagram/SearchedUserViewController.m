@@ -8,6 +8,7 @@
 
 #import "Helper.h"
 #import "SearchedUserViewController.h"
+#import "CustomCollectionViewCell.h"
 
 
 @interface SearchedUserViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
@@ -57,16 +58,14 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cellly" forIndexPath:indexPath];
+    CustomCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cellly" forIndexPath:indexPath];
     PFObject *photo = [self.photosArray objectAtIndex:indexPath.row];
     PFFile *file = [photo objectForKey:@"photo"];
     [file getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
         if (!error) {
             UIImage *image = [UIImage imageWithData:data];
-            UIImageView *imageView = [[UIImageView alloc] initWithImage:[Helper roundedRectImageFromImage:image withRadious:8]];
-            imageView.frame = CGRectMake(0, 0, self.collectionView.frame.size.width, self.collectionView.frame.size.height/2);
-            imageView.contentMode = UIViewContentModeScaleAspectFit;
-            [cell.contentView addSubview:imageView];
+            NSLog(@"%@",image);
+            cell.imageView.image = image;
         }
     }];
     return cell;
