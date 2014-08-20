@@ -22,7 +22,7 @@
       [UIColor whiteColor],NSForegroundColorAttributeName,
       [UIFont fontWithName:@"Futura" size:22.0], NSFontAttributeName,nil]];
 
-    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    [[UINavigationBar appearance] setTintColor:[UIColor redColor]];
 
 
 
