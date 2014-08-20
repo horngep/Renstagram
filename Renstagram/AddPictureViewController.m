@@ -16,6 +16,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *descriptionTextField;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property NSMutableArray *taggedArray;
+@property (weak, nonatomic) IBOutlet UILabel *taggedTextLabel;
+
 @property UIImage *image;
 
 @end
@@ -62,7 +64,7 @@
         [photo setObject:[PFUser currentUser] forKey:@"user"];
         [photo saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
             NSLog(@"picture saved!");
-            // add tag to associate with photo for PFObject class name "Tag" (from unwind)
+            // save tag to associate with photo for PFObject class name "Tag" (from unwind)
             for (PFUser *user in self.taggedArray ) {
                 PFObject *tag = [PFObject objectWithClassName:@"Tag"];
                 [tag setObject:user forKey:@"userGotTag"];
@@ -98,6 +100,18 @@
     [self.taggedArray addObject:user];
     //now we have array of PFUsers who was tagged
     NSLog(@"%@",self.taggedArray);
+    [self displayTaggedFollowers];
+}
+
+-(void)displayTaggedFollowers
+{
+    NSMutableString *taggedString = [NSMutableString new];
+    for (PFUser *taggedUser in self.taggedArray) {
+        NSString *username = [taggedUser objectForKey:@"username"];
+        [taggedString appendString:[NSString stringWithFormat:@"%@   ",username]];
+        NSLog(@"user %@", taggedString);
+    }
+    self.taggedTextLabel.text = taggedString;
 }
 
 #pragma mark - image filter 
