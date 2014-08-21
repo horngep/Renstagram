@@ -8,7 +8,7 @@
 
 #import "FriendsViewController.h"
 #import "PhotoDetailViewController.h"
-#import "Helper.h"
+//#import "Helper.h"
 
 @interface FriendsViewController ()
 @property NSArray *photosArray;
@@ -77,7 +77,9 @@
         UIImageView *photoImageView = [[UIImageView alloc] initWithFrame:CGRectMake(MARGIN, MARGIN*1.3, self.view.frame.size.width-MARGIN*2, 120)];
         PFFile *file = [photo objectForKey:@"photo"];
         [file getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
-            photoImageView.image = [Helper roundedRectImageFromImage:[UIImage imageWithData:data] withRadious:8];
+            photoImageView.layer.cornerRadius = 8.0;
+            photoImageView.clipsToBounds = YES;
+            photoImageView.image = [UIImage imageWithData:data];
         }];
 
         // segue when tapped

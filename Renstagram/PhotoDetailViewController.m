@@ -7,7 +7,6 @@
 //
 
 #import "PhotoDetailViewController.h"
-#import "Helper.h"
 
 @interface PhotoDetailViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -49,7 +48,9 @@
     PFFile *file = [self.photo objectForKey:@"photo"];
     [file getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
         UIImage *image = [UIImage imageWithData:data];
-        self.imageView.image = [Helper roundedRectImageFromImage:image withRadious:8];
+        self.imageView.image = image;
+        self.imageView.layer.cornerRadius = 8.0;
+        self.imageView.clipsToBounds = YES;
     }];
     [self loadComments];
     [self displayTaggedFollowers];

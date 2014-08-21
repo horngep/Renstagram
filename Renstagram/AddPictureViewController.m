@@ -8,7 +8,6 @@
 
 #import "AddPictureViewController.h"
 #import "TagViewController.h"
-#import "Helper.h"
 
 @interface AddPictureViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate>
 
@@ -27,6 +26,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.imageView.layer.cornerRadius = 8.0;
+    self.imageView.clipsToBounds = YES;
     self.taggedArray = [NSMutableArray new];
     self.title = @"Add a photo";
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background"]];
@@ -126,7 +127,7 @@
     switch (sender.selectedSegmentIndex) {
         case 0:
             NSLog(@"no filter!");
-            self.imageView.image  = [Helper roundedRectImageFromImage:self.image withRadious:8]; // <- need this?, default ?
+            self.imageView.image  = self.image;
             break;
         case 1: {
             filter = [CIFilter filterWithName:@"CISepiaTone" keysAndValues: kCIInputImageKey, beginImage, @"inputIntensity", @0.8, nil];
@@ -143,7 +144,7 @@
     if (sender.selectedSegmentIndex) {
         CIImage *outputImage = [filter outputImage];
         UIImage *newImage = [UIImage imageWithCIImage:outputImage];
-        self.imageView.image = [Helper roundedRectImageFromImage:newImage withRadious:8];
+        self.imageView.image = newImage;
     }
 }
 
@@ -152,7 +153,7 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     UIImage *image = [info objectForKey:@"UIImagePickerControllerEditedImage"];
-    self.imageView.image = [Helper roundedRectImageFromImage:image withRadious:8];
+    self.imageView.image = image;
     self.image = image;
     [self dismissViewControllerAnimated:YES completion:nil];
 }

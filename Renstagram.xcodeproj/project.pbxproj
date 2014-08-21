@@ -11,7 +11,6 @@
 		4202198719A3A344005DB287 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4202198619A3A344005DB287 /* Media.xcassets */; };
 		4202198D19A3DD2F005DB287 /* PhotoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4202198C19A3DD2F005DB287 /* PhotoDetailViewController.m */; };
 		4202199019A43DCD005DB287 /* CustomCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4202198F19A43DCD005DB287 /* CustomCollectionViewCell.m */; };
-		4202199319A44754005DB287 /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4202199219A44754005DB287 /* Helper.m */; };
 		425E777919A2B3C700F32BF7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 425E777819A2B3C700F32BF7 /* Foundation.framework */; };
 		425E777B19A2B3C700F32BF7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 425E777A19A2B3C700F32BF7 /* CoreGraphics.framework */; };
 		425E777D19A2B3C700F32BF7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 425E777C19A2B3C700F32BF7 /* UIKit.framework */; };
@@ -42,7 +41,6 @@
 		8427651B19A3E99600DA1AC8 /* TagViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8427651A19A3E99600DA1AC8 /* TagViewController.m */; };
 		84847BE419A2F892009B9C9D /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84847BE319A2F892009B9C9D /* SearchViewController.m */; };
 		84847BE719A3023F009B9C9D /* LogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84847BE619A3023F009B9C9D /* LogInViewController.m */; };
-		84847BE919A3032F009B9C9D /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 84847BE819A3032F009B9C9D /* background.png */; };
 		98D9E6F619A3B5D800528314 /* FriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98D9E6F519A3B5D800528314 /* FriendsViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -64,8 +62,6 @@
 		4202198C19A3DD2F005DB287 /* PhotoDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoDetailViewController.m; sourceTree = "<group>"; };
 		4202198E19A43DCD005DB287 /* CustomCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCollectionViewCell.h; sourceTree = "<group>"; };
 		4202198F19A43DCD005DB287 /* CustomCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCollectionViewCell.m; sourceTree = "<group>"; };
-		4202199119A44754005DB287 /* Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Helper.h; sourceTree = "<group>"; };
-		4202199219A44754005DB287 /* Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Helper.m; sourceTree = "<group>"; };
 		425E777519A2B3C700F32BF7 /* Renstagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Renstagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		425E777819A2B3C700F32BF7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		425E777A19A2B3C700F32BF7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -105,7 +101,6 @@
 		84847BE319A2F892009B9C9D /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		84847BE519A3023F009B9C9D /* LogInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogInViewController.h; sourceTree = "<group>"; };
 		84847BE619A3023F009B9C9D /* LogInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogInViewController.m; sourceTree = "<group>"; };
-		84847BE819A3032F009B9C9D /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
 		98D9E6F419A3B5D800528314 /* FriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsViewController.h; sourceTree = "<group>"; };
 		98D9E6F519A3B5D800528314 /* FriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -210,15 +205,12 @@
 				4202198C19A3DD2F005DB287 /* PhotoDetailViewController.m */,
 				425E777F19A2B3C700F32BF7 /* Supporting Files */,
 				4202198619A3A344005DB287 /* Media.xcassets */,
-				84847BE819A3032F009B9C9D /* background.png */,
 				84847BE519A3023F009B9C9D /* LogInViewController.h */,
 				84847BE619A3023F009B9C9D /* LogInViewController.m */,
 				4202198319A39CD8005DB287 /* SignUpViewController.h */,
 				4202198419A39CD8005DB287 /* SignUpViewController.m */,
 				4202198E19A43DCD005DB287 /* CustomCollectionViewCell.h */,
 				4202198F19A43DCD005DB287 /* CustomCollectionViewCell.m */,
-				4202199119A44754005DB287 /* Helper.h */,
-				4202199219A44754005DB287 /* Helper.m */,
 			);
 			path = Renstagram;
 			sourceTree = "<group>";
@@ -328,7 +320,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84847BE919A3032F009B9C9D /* background.png in Resources */,
 				425E778319A2B3C700F32BF7 /* InfoPlist.strings in Resources */,
 				4202198719A3A344005DB287 /* Media.xcassets in Resources */,
 				425E778C19A2B3C700F32BF7 /* Main.storyboard in Resources */,
@@ -361,7 +352,6 @@
 				4202198519A39CD8005DB287 /* SignUpViewController.m in Sources */,
 				8427651B19A3E99600DA1AC8 /* TagViewController.m in Sources */,
 				425E778519A2B3C700F32BF7 /* main.m in Sources */,
-				4202199319A44754005DB287 /* Helper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

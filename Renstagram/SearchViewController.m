@@ -9,7 +9,6 @@
 #import "SearchViewController.h"
 #import "PhotoDetailViewController.h"
 #import "MyProfileViewController.h"
-#import "Helper.h"
 
 @interface SearchViewController () <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *searchTextField;
@@ -128,7 +127,9 @@
     [file getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
         if (!error) {
             UIImage *image = [UIImage imageWithData:data];
-            UIImageView *imageView = [[UIImageView alloc] initWithImage:[Helper roundedRectImageFromImage:image withRadious:8]];
+            UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+            imageView.layer.cornerRadius = 8.0;
+            imageView.clipsToBounds = YES;
             imageView.frame = CGRectMake(0, 0, 155, 155); //this is the size of cell
             imageView.backgroundColor = [UIColor clearColor];
             imageView.contentMode = UIViewContentModeScaleAspectFit;

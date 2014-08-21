@@ -11,7 +11,7 @@
 #import "LogInViewController.h"
 #import "SignUpViewController.h"
 #import "CustomCollectionViewCell.h"
-#import "Helper.h"
+//#import "Helper.h"
 
 @interface MyProfileViewController () <PFSignUpViewControllerDelegate, PFLogInViewControllerDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
 
@@ -103,7 +103,6 @@
         [query whereKey:@"user" equalTo:[PFUser currentUser]];
     } else {
         [query whereKey:@"user" equalTo:self.user];
-        self.title = [NSString stringWithFormat:@"%@'s Profile",self.user.username];
     }
     [query orderByDescending:@"createdAt"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
@@ -134,6 +133,9 @@
     SignUpViewController *signUpViewController = [[SignUpViewController alloc] init];
     signUpViewController.fields = PFSignUpFieldsUsernameAndPassword | PFSignUpFieldsEmail | PFSignUpFieldsSignUpButton | PFSignUpFieldsDismissButton | PFSignUpFieldsAdditional | PFSignUpFieldsDefault;
     [signUpViewController setDelegate:self];
+
+    [PFTwitterUtils initializeWithConsumerKey:@"6mL4k6U7cD6l3KbxKUUzEClRY" consumerSecret:@"C93Cme4pe6oBrTk9AZlC2BQUDAbHvu0OancINOcxWjDcPUTXKD"];
+
 
     [logInViewController setSignUpController:signUpViewController];
     [self presentViewController:logInViewController animated:YES completion:NULL];
@@ -174,7 +176,9 @@
         if (!error) {
             UIImage *image = [UIImage imageWithData:data];
 
-            cell.imageView.image = [Helper roundedRectImageFromImage:image withRadious:9];
+            cell.imageView.image = image;
+            cell.imageView.layer.cornerRadius = 8.0;
+            cell.imageView.clipsToBounds = YES;
             cell.imageView.contentMode = UIViewContentModeScaleAspectFit;
             cell.descriptionLabel.text = [photo objectForKey:@"description"];
 
