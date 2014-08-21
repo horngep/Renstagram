@@ -11,13 +11,13 @@
 
 @interface AddPictureViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate>
 
-@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+
 @property (weak, nonatomic) IBOutlet UITextField *descriptionTextField;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
-@property NSMutableArray *taggedArray;
 @property (weak, nonatomic) IBOutlet UILabel *taggedTextLabel;
-
+@property NSMutableArray *taggedArray;
 @property UIImage *image;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 @end
 
@@ -28,6 +28,7 @@
     [super viewDidLoad];
     self.imageView.layer.cornerRadius = 8.0;
     self.imageView.clipsToBounds = YES;
+    self.imageView.contentMode = UIViewContentModeScaleAspectFill;
     
     self.taggedArray = [NSMutableArray new];
     self.title = @"Add a photo";
@@ -59,6 +60,8 @@
 - (IBAction)addPictureButtonPressed:(id)sender
 {
     if (self.imageView.image) {  //Prevent saving blank images.
+
+        [self.activityIndicator startAnimating];
         PFFile *file = [PFFile fileWithData:UIImagePNGRepresentation(self.imageView.image)];
         PFObject *photo = [PFObject objectWithClassName:@"Photo"];
         [photo setObject:file forKey:@"photo"];
@@ -73,10 +76,10 @@
                 [tag saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
                 }];
             }
+            self.tabBarController.selectedIndex = 0;
+            [self.activityIndicator stopAnimating];
         }];
-        self.descriptionTextField.text = @"";
     }
-    [self.descriptionTextField resignFirstResponder];
 }
 
 #pragma mark - descriptions

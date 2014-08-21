@@ -48,7 +48,7 @@
                                     <action selector="addPictureButtonPressed:" destination="Zq6-b7-VDg" eventType="touchUpInside" id="XIx-ac-Hlr"/>
                                 </connections>
                             </button>
-                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="Fyt-Ys-oNc">
+                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="Fyt-Ys-oNc">
                                 <rect key="frame" x="20" y="74" width="280" height="232"/>
                                 <gestureRecognizers/>
                                 <connections>
@@ -106,6 +106,10 @@
                                 <color key="textColor" red="0.97156010841836737" green="0.97156010841836737" blue="0.97156010841836737" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="oBb-CB-VZg">
+                                <rect key="frame" x="142" y="171" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -115,7 +119,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="0t2-Kj-9Is"/>
                     <connections>
-                        <outlet property="activityIndicator" destination="IMk-Jw-AQH" id="B9t-3w-y8N"/>
+                        <outlet property="activityIndicator" destination="oBb-CB-VZg" id="Wjl-OY-Qg2"/>
                         <outlet property="descriptionTextField" destination="K6j-yN-RZc" id="BL2-Vb-Cx8"/>
                         <outlet property="imageView" destination="Fyt-Ys-oNc" id="S6f-4U-w63"/>
                         <outlet property="taggedTextLabel" destination="s7r-cg-M1L" id="wwa-pU-TfX"/>

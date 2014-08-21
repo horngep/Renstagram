@@ -11,7 +11,6 @@
 #import "LogInViewController.h"
 #import "SignUpViewController.h"
 #import "CustomCollectionViewCell.h"
-//#import "Helper.h"
 
 @interface MyProfileViewController () <PFSignUpViewControllerDelegate, PFLogInViewControllerDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
 
@@ -44,6 +43,9 @@
         // reload when upload
         [self displayUserPhotos];
     }
+    NSLog(@"entro");
+    [self displayUserPhotos];
+
 #define BUTTON_WIDTH 90
 #define BUTTON_HEIGHT 30
 #define MARGIN 20
@@ -68,6 +70,7 @@
     }
 
 }
+
 - (IBAction)followAction:(UIButton *)button {
     if ([button.titleLabel.text isEqualToString:@"Follow"]) {
         NSLog(@"PREEESD 1");
