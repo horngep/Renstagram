@@ -74,7 +74,7 @@
         photoView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"cellBg"]];
         [self.scrollView addSubview:photoView];
 
-        UIImageView *photoImageView = [[UIImageView alloc] initWithFrame:CGRectMake(MARGIN, MARGIN*1.3, self.view.frame.size.width-MARGIN*2, 120)];
+        UIImageView *photoImageView = [[UIImageView alloc] initWithFrame:CGRectMake(MARGIN*4, MARGIN*1.3, self.view.frame.size.width-MARGIN*8, 140)];
         PFFile *file = [photo objectForKey:@"photo"];
         [file getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
             photoImageView.layer.cornerRadius = 8.0;
@@ -86,7 +86,7 @@
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(doSegue:)];
         photoImageView.userInteractionEnabled = YES;
         [photoImageView addGestureRecognizer:tap];
-        photoImageView.contentMode = UIViewContentModeScaleAspectFit;
+        photoImageView.contentMode = UIViewContentModeScaleAspectFill;
         [photoView addSubview:photoImageView];
 
         UILabel *descriptionLabel = [[UILabel alloc] initWithFrame:CGRectMake(MARGIN, photoImageView.frame.origin.y + photoImageView.frame.size.height + MARGIN/2, self.view.frame.size.width-2*MARGIN, MARGIN*3)];

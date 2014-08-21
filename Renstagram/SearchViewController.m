@@ -132,7 +132,7 @@
             imageView.clipsToBounds = YES;
             imageView.frame = CGRectMake(0, 0, 155, 155); //this is the size of cell
             imageView.backgroundColor = [UIColor clearColor];
-            imageView.contentMode = UIViewContentModeScaleAspectFit;
+            imageView.contentMode = UIViewContentModeScaleAspectFill;
             for (UIView *view in cell.contentView.subviews) {
                 [view removeFromSuperview];
             }

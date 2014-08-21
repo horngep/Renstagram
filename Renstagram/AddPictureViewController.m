@@ -28,6 +28,7 @@
     [super viewDidLoad];
     self.imageView.layer.cornerRadius = 8.0;
     self.imageView.clipsToBounds = YES;
+    
     self.taggedArray = [NSMutableArray new];
     self.title = @"Add a photo";
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background"]];

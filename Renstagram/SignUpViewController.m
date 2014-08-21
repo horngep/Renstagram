@@ -20,7 +20,7 @@
     
     UIImageView *logoImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logo.png"]];
     logoImageView.frame = CGRectMake(0, 0, 200, 150);
-    logoImageView.contentMode = UIViewContentModeScaleAspectFit;
+    logoImageView.contentMode = UIViewContentModeScaleAspectFill;
     [self.signUpView setLogo:logoImageView];
 }
 

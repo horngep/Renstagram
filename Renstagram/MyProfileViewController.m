@@ -178,8 +178,11 @@
 
             cell.imageView.image = image;
             cell.imageView.layer.cornerRadius = 8.0;
+            cell.imageView.layer.masksToBounds = YES;
             cell.imageView.clipsToBounds = YES;
-            cell.imageView.contentMode = UIViewContentModeScaleAspectFit;
+
+
+            cell.imageView.contentMode = UIViewContentModeScaleAspectFill;
             cell.descriptionLabel.text = [photo objectForKey:@"description"];
 
             NSDate *photoDate = [photo createdAt];
