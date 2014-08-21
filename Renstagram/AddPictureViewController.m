@@ -59,8 +59,6 @@
 
 - (IBAction)addPictureButtonPressed:(id)sender
 {
-    if (self.imageView.image) {  //Prevent saving blank images.
-
         [self.activityIndicator startAnimating];
         PFFile *file = [PFFile fileWithData:UIImagePNGRepresentation(self.imageView.image)];
         PFObject *photo = [PFObject objectWithClassName:@"Photo"];
@@ -79,8 +77,8 @@
             self.tabBarController.selectedIndex = 0;
             [self.activityIndicator stopAnimating];
         }];
-    }
 }
+
 
 #pragma mark - descriptions
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
