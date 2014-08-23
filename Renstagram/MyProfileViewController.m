@@ -44,7 +44,7 @@
         [self displayUserPhotos];
     }
     NSLog(@"entro");
-    [self displayUserPhotos];
+    //[self displayUserPhotos];
 
 #define BUTTON_WIDTH 90
 #define BUTTON_HEIGHT 30
@@ -103,6 +103,8 @@
 {
     PFQuery *query = [PFQuery queryWithClassName:@"Photo"];
     if (!self.user) {
+        PFUser* aUser = [PFUser currentUser];
+        NSLog(@"aUser = %@", aUser);
         [query whereKey:@"user" equalTo:[PFUser currentUser]];
     } else {
         [query whereKey:@"user" equalTo:self.user];
@@ -133,7 +135,7 @@
     logInViewController.fields = PFLogInFieldsUsernameAndPassword | PFLogInFieldsLogInButton | PFLogInFieldsFacebook | PFLogInFieldsTwitter | PFLogInFieldsSignUpButton |PFLogInFieldsPasswordForgotten;
     logInViewController.delegate = self;
 
-    SignUpViewController *signUpViewController = [[SignUpViewController alloc] init];
+    PFSignUpViewController *signUpViewController = [[PFSignUpViewController alloc] init];
     signUpViewController.fields = PFSignUpFieldsUsernameAndPassword | PFSignUpFieldsEmail | PFSignUpFieldsSignUpButton | PFSignUpFieldsDismissButton | PFSignUpFieldsAdditional | PFSignUpFieldsDefault;
     [signUpViewController setDelegate:self];
 

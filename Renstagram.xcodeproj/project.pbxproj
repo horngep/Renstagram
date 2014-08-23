@@ -39,6 +39,7 @@
 		425E77C619A2B64F00F32BF7 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 425E77C519A2B64F00F32BF7 /* Accounts.framework */; };
 		425E77C919A2B8B900F32BF7 /* AddPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 425E77C819A2B8B900F32BF7 /* AddPictureViewController.m */; };
 		8427651B19A3E99600DA1AC8 /* TagViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8427651A19A3E99600DA1AC8 /* TagViewController.m */; };
+		847EC3FA19A672450032E726 /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 847EC3F919A672450032E726 /* Helper.m */; };
 		84847BE419A2F892009B9C9D /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84847BE319A2F892009B9C9D /* SearchViewController.m */; };
 		84847BE719A3023F009B9C9D /* LogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84847BE619A3023F009B9C9D /* LogInViewController.m */; };
 		98D9E6F619A3B5D800528314 /* FriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98D9E6F519A3B5D800528314 /* FriendsViewController.m */; };
@@ -97,6 +98,8 @@
 		425E77C819A2B8B900F32BF7 /* AddPictureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddPictureViewController.m; sourceTree = "<group>"; };
 		8427651919A3E99600DA1AC8 /* TagViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagViewController.h; sourceTree = "<group>"; };
 		8427651A19A3E99600DA1AC8 /* TagViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TagViewController.m; sourceTree = "<group>"; };
+		847EC3F819A672450032E726 /* Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Helper.h; sourceTree = "<group>"; };
+		847EC3F919A672450032E726 /* Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Helper.m; sourceTree = "<group>"; };
 		84847BE219A2F892009B9C9D /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
 		84847BE319A2F892009B9C9D /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		84847BE519A3023F009B9C9D /* LogInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogInViewController.h; sourceTree = "<group>"; };
@@ -205,6 +208,8 @@
 				4202198C19A3DD2F005DB287 /* PhotoDetailViewController.m */,
 				425E777F19A2B3C700F32BF7 /* Supporting Files */,
 				4202198619A3A344005DB287 /* Media.xcassets */,
+				847EC3F819A672450032E726 /* Helper.h */,
+				847EC3F919A672450032E726 /* Helper.m */,
 				84847BE519A3023F009B9C9D /* LogInViewController.h */,
 				84847BE619A3023F009B9C9D /* LogInViewController.m */,
 				4202198319A39CD8005DB287 /* SignUpViewController.h */,
@@ -348,6 +353,7 @@
 				425E77C919A2B8B900F32BF7 /* AddPictureViewController.m in Sources */,
 				98D9E6F619A3B5D800528314 /* FriendsViewController.m in Sources */,
 				425E778919A2B3C700F32BF7 /* AppDelegate.m in Sources */,
+				847EC3FA19A672450032E726 /* Helper.m in Sources */,
 				84847BE419A2F892009B9C9D /* SearchViewController.m in Sources */,
 				4202198519A39CD8005DB287 /* SignUpViewController.m in Sources */,
 				8427651B19A3E99600DA1AC8 /* TagViewController.m in Sources */,
