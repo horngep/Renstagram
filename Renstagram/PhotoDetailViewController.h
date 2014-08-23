@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface PhotoDetailViewController : UIViewController
-
 @property PFObject *photo;
-
 @end
+
+

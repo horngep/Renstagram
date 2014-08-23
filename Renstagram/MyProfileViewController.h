@@ -10,4 +10,8 @@
 
 @interface MyProfileViewController : UIViewController
 @property PFUser *user;
+
 @end
+
+
+// use of PFImage ?

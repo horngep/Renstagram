@@ -24,8 +24,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.title = @"Search";
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background"]];
+    self.title = @"Search";
     self.searchResults = [NSArray new];
 
     [self.tableView setHidden:YES];
@@ -105,7 +105,7 @@
 #pragma mark - COLLECTION VIEW
 -(void)showPhotoOnCollectionView
 {
-    // show all photos: "Explore"
+    // "Explore" (not really)
     PFQuery *query = [PFQuery queryWithClassName:@"Photo"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         self.photosArray = objects;
@@ -141,7 +141,4 @@
     }];
     return cell;
 }
-
-
-
 @end

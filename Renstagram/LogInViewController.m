@@ -13,7 +13,6 @@
 @end
 
 @implementation LogInViewController
-//Subclass PFLoginViewController
 
 -(void)viewDidLoad
 {
@@ -24,10 +23,6 @@
     self.logInView.passwordField.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.1];
     self.logInView.passwordForgottenButton.backgroundColor = [UIColor clearColor];
 
-    UIImageView *logoImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logo.png"]];
-    logoImageView.frame = CGRectMake(0, 0, 200, 150);
-    logoImageView.contentMode = UIViewContentModeScaleAspectFill;
-    [self.logInView setLogo:logoImageView];
 }
 
 - (void)viewDidLayoutSubviews

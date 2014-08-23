@@ -36,7 +36,6 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    //send back the person who got tagged
     self.selectedObject = [self.followersArray objectAtIndex:[self.tableView indexPathForSelectedRow].row];
 }
 
@@ -44,7 +43,6 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
-
     PFObject *follower = [self.followersArray objectAtIndex:indexPath.row];
     PFUser *user = [follower objectForKey:@"to"];
     [user fetchIfNeeded]; //to be able to access username

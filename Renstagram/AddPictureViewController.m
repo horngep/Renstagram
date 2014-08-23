@@ -93,10 +93,8 @@
 #pragma mark - tagging followers
 -(IBAction)unwind:(UIStoryboardSegue *)sender
 {
-    // get PFUser from tag view and addObject to mutable array
     TagViewController *tvc = sender.sourceViewController;
     PFObject *follower = tvc.selectedObject;
-    //get PFUser from follow
     PFUser *user = [follower objectForKey:@"to"];
     [user fetchIfNeeded]; // need this to get to user
     [self.taggedArray addObject:user];

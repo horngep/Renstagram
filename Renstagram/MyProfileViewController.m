@@ -43,8 +43,6 @@
         // reload when upload
         [self displayUserPhotos];
     }
-    NSLog(@"entro");
-    //[self displayUserPhotos];
 
 #define BUTTON_WIDTH 90
 #define BUTTON_HEIGHT 30

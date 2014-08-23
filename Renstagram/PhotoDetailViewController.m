@@ -34,7 +34,6 @@
     [userQuery whereKey:@"objectId" equalTo:user.objectId];
     [userQuery getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
         self.title = [NSString stringWithFormat:@"Photo by %@", [object objectForKey:@"username"]];
-
     }];
 
     //if its current user
@@ -54,13 +53,12 @@
     }];
     [self loadComments];
     [self displayTaggedFollowers];
-
 }
+
 #pragma mark - deleting photo
 - (IBAction)onDeletePhotoButtonPressed:(id)sender
 {
     [self.photo delete];
-    NSLog(@"deleted");
     [self.navigationController popViewControllerAnimated:YES];
 }
 
@@ -71,7 +69,7 @@
     PFQuery *query = [PFQuery queryWithClassName:@"Tag"];
     [query whereKey:@"photoContainTag" equalTo:self.photo];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        // now we have array of Tags~
+        // now we have array of Tags
         for (PFObject *tags in objects) {
             PFUser *user = [tags objectForKey:@"userGotTag"];
             [user fetchIfNeeded];
@@ -84,7 +82,6 @@
 #pragma mark - Comments
 - (IBAction)onButtonPressedAddComment:(id)sender
 {
-    // add comments to Parse
     PFObject *comment = [PFObject objectWithClassName:@"Comment"];
     [comment setObject:[PFUser currentUser] forKey:@"user"];
     [comment setObject:self.photo forKey:@"photo"];
@@ -95,7 +92,6 @@
 
     self.textField.text = @"";
     [self.textField resignFirstResponder];
-
 }
 
 -(void)loadComments
@@ -125,7 +121,6 @@
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
     dateFormat.timeStyle = NSDateFormatterShortStyle;
     dateFormat.dateStyle = NSDateFormatterShortStyle;
-    //[dateFormat setDateFormat:@"EEE, MMM d, h:mm a"];
     cell.detailTextLabel.text = [NSString stringWithFormat:@"Lasted Updated: %@", [dateFormat stringFromDate:updated]];
     cell.detailTextLabel.textColor = [UIColor whiteColor];
     cell.textLabel.textColor = [UIColor whiteColor];
@@ -134,7 +129,6 @@
         PFUser *user = objects.firstObject;
             cell.detailTextLabel.text =[NSString stringWithFormat:@"by %@ at %@",[user objectForKey:@"username"],[dateFormat stringFromDate:updated]];
     }];
-
     return cell;
 }
 
@@ -142,6 +136,4 @@
 {
     return self.commentsArray.count;
 }
-
-
 @end

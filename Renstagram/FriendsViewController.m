@@ -18,7 +18,6 @@
 
 @implementation FriendsViewController
 
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -31,11 +30,6 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    // if logged in with another user
-//    if ((self.photosArray.count == 0) || (self.userName != [PFUser currentUser].username)) {
-//        [self getPhotos];
-//        self.userName = [PFUser currentUser].username;
-//    }
     for (UIView *view in self.scrollView.subviews) {
         [view removeFromSuperview];
     }
@@ -44,7 +38,7 @@
 
 - (void)getPhotos
 {
-    // this is bad #badIvan, FetchIfNeeded !
+    // FetchIfNeeded ?
     PFQuery *query = [PFQuery queryWithClassName:@"Follow"];
     [query whereKey:@"from" equalTo:[PFUser currentUser]];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
@@ -67,7 +61,7 @@
     #define MARGIN 20
     int count = 0;
 
-    // #badIvan, too much stuff in here
+    // too much in here
     for (PFObject *photo in self.photosArray) {
 
         UIView *photoView = [[UIView alloc] initWithFrame:CGRectMake(0, count * PHOTO_VIEW_HEIGHT, self.view.frame.size.width, PHOTO_VIEW_HEIGHT)];
